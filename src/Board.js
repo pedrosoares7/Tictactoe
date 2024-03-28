@@ -1,5 +1,6 @@
 import React, {} from 'react'
 import Square from './Square';
+import SquareLittle from './SquareLittle';
 
 export default class Board extends React.Component {
     constructor(props){
@@ -14,6 +15,10 @@ export default class Board extends React.Component {
        value ={this.state.squares[i]} abc={() => this.handleClick(i)} 
         />
         );
+    }
+
+    renderSquareLittle(value) {
+      return <SquareLittle value={value} />;
     }
   
     handleClick(i) {
@@ -106,7 +111,30 @@ export default class Board extends React.Component {
             {this.renderSquare(7)}
             {this.renderSquare(8)}
           </div>
-        </div>
+        <div>
+        Last Plays:            
+        {this.state.history.map(play => 
+            <li>{play[0]}
+              <div className="board-row">
+                {this.renderSquareLittle(play[0])}
+                {this.renderSquareLittle(play[1])}
+                {this.renderSquareLittle(play[2])}
+              </div>
+              <div className="board-row">
+                {this.renderSquareLittle(play[3])}
+                {this.renderSquareLittle(play[4])}
+                {this.renderSquareLittle(play[5])}
+              </div>
+              <div className="board-row">
+                {this.renderSquareLittle(play[6])}
+                {this.renderSquareLittle(play[7])}
+                {this.renderSquareLittle(play[8])}
+              </div>
+            </li>)
+        }            
+      </div>
+    </div>
+
       );
     }
   }

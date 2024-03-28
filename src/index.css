@@ -59,3 +59,12 @@ ol, ul {
 .game-info {
     margin-left: 20px;
 }
+
+.little {
+    height: 16px;
+    width: 16px;
+    font-size: 12px;
+    line-height: 17px;
+    margin-right: 1px;
+    margin-top: 1px;
+}
